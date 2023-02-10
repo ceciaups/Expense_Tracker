@@ -1,0 +1,22 @@
+﻿@model Expense_Tracker.Models.MemberDto
+@{
+    ViewBag.Title = "New Member";
+}
+
+<div>
+    <a class="navlink" href="/Member/List">Back to Member</a>
+</div>
+
+<div>
+    <h1>New Member</h1>
+</div>
+
+<form action="/Member/Create" method="POST">
+    <div>
+        <label>Name:</label> <input type="text" name="MemberName" />
+    </div>
+    <div>
+        <input type="submit" value="Add Member" />
+
+    </div>
+</form>

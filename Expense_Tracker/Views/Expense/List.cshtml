@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Expense_Tracker.Models.ExpenseDto>
+@{
+    ViewBag.Title = "Expense Tracker";
+}
+
+<div>
+    <a class="navlink" href="/Expense/New">New Expense</a>
+</div>
+
+<div>
+    <h1>Expense Tracker</h1>
+</div>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Member</th>
+        <th>Amount</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var expense in Model)
+    {
+        <tr>
+            <td>@expense.ExpenseDate</td>
+            <td>@expense.ExpenseDescription</td>
+            <td>@expense.CategoryName</td>
+            <td>@expense.MemberName</td>
+            <td>$@expense.ExpenseAmount</td>
+            <td><a href="/Expense/Edit/@expense.ExpenseID">Edit</td>
+            <td><a href="/Expense/DeleteConfirm/@expense.ExpenseID">Delete</td>
+        </tr>
+    }
+</table>

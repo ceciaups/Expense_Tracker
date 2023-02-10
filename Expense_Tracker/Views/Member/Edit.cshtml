@@ -1,0 +1,26 @@
+﻿@model Expense_Tracker.Models.MemberDto
+@{
+    ViewBag.Title = "Edit Member";
+}
+
+<div>
+    <a class="navlink" href="/Member/List">Back to Member</a>
+</div>
+
+<div>
+    <h1>Update Member</h1>
+</div>
+
+<form action="/Member/Update/@Model.MemberID" method="POST">
+    <div style="display:none;">
+        @* Pass through the member ID *@
+        <input type="text" name="MemberID" value="@Model.MemberID" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="MemberName" value="@Model.MemberName" />
+    </div>
+    <div>
+        <input type="submit" value="Update Member" />
+
+    </div>
+</form>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Expense_Tracker.Models.MemberDto>
+@{
+    ViewBag.Title = "Member";
+}
+
+<div>
+    <a class="navlink" href="/Member/New">New Member</a>
+</div>
+
+<div>
+    <h1>Member List</h1>
+</div>
+<table>
+    <tr>
+        <th>Member</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var member in Model)
+    {
+        <tr>
+            <td>@member.MemberName</td>
+            <td><a href="/Member/Edit/@member.MemberID">Edit</td>
+            <td><a href="/Member/DeleteConfirm/@member.MemberID">Delete</td>
+        </tr>
+    }
+</table>

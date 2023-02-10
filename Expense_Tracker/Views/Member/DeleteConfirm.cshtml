@@ -1,0 +1,11 @@
+﻿@model Expense_Tracker.Models.MemberDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this member?</h2>
+<a href="/Member/List">Cancel</a>
+<div>Name: @Model.MemberName</div>
+<form action="/Member/Delete/@Model.MemberID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

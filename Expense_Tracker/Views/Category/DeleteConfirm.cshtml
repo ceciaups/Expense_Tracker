@@ -1,0 +1,11 @@
+﻿@model Expense_Tracker.Models.CategoryDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this category?</h2>
+<a href="/Catagory/List">Cancel</a>
+<div>Name: @Model.CategoryName</div>
+<form action="/Category/Delete/@Model.CategoryID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

@@ -1,0 +1,60 @@
+﻿@model Expense_Tracker.Models.ViewModels.UpdateExpense
+@{
+    ViewBag.Title = "Edit Expense";
+}
+
+<div>
+    <a class="navlink" href="/Expense/List">Back to Expense</a>
+</div>
+
+<div>
+    <h1>Update Expense</h1>
+</div>
+
+<form action="/Expense/Update/@Model.SelectedExpense.ExpenseID" method="POST">
+    <div style="display:none;">
+        @* Pass through the expense ID *@
+        <input type="text" name="ExpenseID" value="@Model.SelectedExpense.ExpenseID" />
+    </div>
+    <div>
+        <label>Date:</label> <input type="date" name="ExpenseDate" value="@Model.SelectedExpense.ExpenseDate" />
+    </div>
+    <div>
+        <label>Description:</label> <input type="text" name="ExpenseDescription" value="@Model.SelectedExpense.ExpenseDescription" />
+    </div>
+    <div>
+        <label>Amount: $</label> <input type="number" step="0.01" name="ExpenseAmount" value="@Model.SelectedExpense.ExpenseAmount" />
+    </div>
+    <div>
+        <label>Member:</label>
+        <select name="MemberID">
+            @foreach (var member in Model.AllMembers)
+            {
+                string selected = "";
+                if (member.MemberID == Model.SelectedExpense.MemberID)
+                {
+                    selected = "selected";
+                }
+                <option value="@member.MemberID" @selected>@member.MemberName</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label>Category:</label>
+        <select name="CategoryID">
+            @foreach (var category in Model.AllCategories)
+            {
+                string selected = "";
+                if (category.CategoryID == Model.SelectedExpense.CategoryID)
+                {
+                    selected = "selected";
+                }
+                <option value="@category.CategoryID" @selected>@category.CategoryName</option>
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Update Expense" />
+
+    </div>
+</form>
