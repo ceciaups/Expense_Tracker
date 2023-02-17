@@ -3,34 +3,48 @@
     ViewBag.Title = "Expense Tracker";
 }
 
-<div>
-    <a class="navlink" href="/Expense/New">New Expense</a>
+<div class="navlink">
+    <a href="/Expense/New">New Expense</a>
 </div>
 
 <div>
     <h1>Expense Tracker</h1>
 </div>
 
-<table>
-    <tr>
-        <th>Date</th>
-        <th>Description</th>
-        <th>Category</th>
-        <th>Member</th>
-        <th>Amount</th>
-        <th></th>
-        <th></th>
-    </tr>
-    @foreach (var expense in Model)
-    {
+<table id="table-expense" class="display">
+    <thead>
         <tr>
-            <td>@expense.ExpenseDate</td>
-            <td>@expense.ExpenseDescription</td>
-            <td>@expense.CategoryName</td>
-            <td>@expense.MemberName</td>
-            <td>$@expense.ExpenseAmount</td>
-            <td><a href="/Expense/Edit/@expense.ExpenseID">Edit</td>
-            <td><a href="/Expense/DeleteConfirm/@expense.ExpenseID">Delete</td>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Member</th>
+            <th>Amount</th>
+            <th></th>
+            <th></th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var expense in Model)
+        {
+            <tr>
+                <td>@expense.ExpenseDate</td>
+                <td>@expense.ExpenseDescription</td>
+                <td>@expense.CategoryName</td>
+                <td>@expense.MemberName</td>
+                <td>$@expense.ExpenseAmount</td>
+                <td><a href="/Expense/Edit/@expense.ExpenseID">Edit</td>
+                <td><a href="/Expense/DeleteConfirm/@expense.ExpenseID">Delete</td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+<script>
+    $('#table-expense').dataTable({
+        paging: false,
+        columnDefs: [
+            { orderable: false, targets: -1 },
+            { orderable: false, targets: -2 }
+        ]
+    });
+</script>

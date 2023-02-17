@@ -26,5 +26,21 @@ textarea {
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
     background-color: #777;
-    border-color: #fff
+    border-color: #fff;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    padding: 0.5rem 1rem;
+}
+
+td {
+    padding: 0.5rem 1rem;
+}
+
+.navlink {
+    margin-top: 1rem;
 }

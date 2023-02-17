@@ -3,25 +3,40 @@
     ViewBag.Title = "Member";
 }
 
-<div>
-    <a class="navlink" href="/Member/New">New Member</a>
+<div class="navlink">
+    <a href="/Member/New">New Member</a>
 </div>
 
 <div>
     <h1>Member List</h1>
 </div>
-<table>
-    <tr>
-        <th>Member</th>
-        <th></th>
-        <th></th>
-    </tr>
-    @foreach (var member in Model)
-    {
+<table id="table-member" class="display">
+    <thead>
         <tr>
-            <td>@member.MemberName</td>
-            <td><a href="/Member/Edit/@member.MemberID">Edit</td>
-            <td><a href="/Member/DeleteConfirm/@member.MemberID">Delete</td>
+            <th>Member</th>
+            <th></th>
+            <th></th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.MemberName</td>
+                <td><a href="/Member/Edit/@member.MemberID">Edit</td>
+                <td><a href="/Member/DeleteConfirm/@member.MemberID">Delete</td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+<script>
+    $('#table-member').dataTable({
+        searching: false,
+        paging: false,
+        columnDefs: [
+            { orderable: false, targets: -1 },
+            { orderable: false, targets: -2 }
+        ]
+    });
+</script>
