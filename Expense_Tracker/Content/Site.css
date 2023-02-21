@@ -44,3 +44,12 @@ td {
 .navlink {
     margin-top: 1rem;
 }
+
+.dtsp-panesContainer {
+    display: none;
+}
+
+#chart-container {
+    display: flex;
+    width: 100%;
+}
