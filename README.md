@@ -4,6 +4,6 @@
 
 ## Links
 - HTML: [/Views](Expense_Tracker/Views)
-- JavaScript: [/Scripts/expense_tracker.js](Expense_Tracker/Scipts/expense_tracker.js)
+- JavaScript: [/Scripts/expense-tracker.js](Expense_Tracker/Scripts/expense-tracker.js)
 - CSS: [/Content/Site.css](Expense_Tracker/Content/Site.css)
 - Controllers: [/Controllers](Expense_Tracker/Controllers)
