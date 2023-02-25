@@ -1,6 +1,100 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Raleway:wght@400;600&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #ffffed;
+}
+
+input {
+    line-height: initial;
+}
+
+.button-general {
+    background-color: #ffebc2;
+    border: 1px solid #f37d23;
+    color: #f37d23;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+}
+
+.button-general:hover,
+.button-general:focus {
+    background-color: #ffdbb2;
+    text-decoration: none;
+    color: #f37d23;
+}
+
+.button-general:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-general:active {
+    background-color: #ffcba2;
+    box-shadow: none;
+    color: #f37d23;
+}
+
+.button-new {
+    position: absolute;
+    z-index: 1;
+}
+
+.button-edit {
+    background-color: #f7f8bb;
+    border: 1px solid #f8bc49;
+    color: #f8bc49;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+}
+
+.button-edit:hover,
+.button-edit:focus {
+    background-color: #f7f89b;
+    text-decoration: none;
+    color: #f8bc49;
+}
+
+.button-edit:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-edit:active {
+    background-color: #f7e88b;
+    box-shadow: none;
+    color: #f8bc49;
+}
+
+.button-delete {
+    background-color: #ffd7bf;
+    border: 1px solid #f05d56;
+    color: #f05d56;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+}
+
+.button-delete:hover,
+.button-delete:focus {
+    background-color: #ffc7af;
+    text-decoration: none;
+    color: #f05d56;
+}
+
+.button-delete:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-delete:active {
+    background-color: #ffb79f;
+    box-shadow: none;
+    color: #f05d56;
+}
+
+.button {
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 8px .8em;
+    text-align: center;
+    text-decoration: none;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,10 +117,33 @@ textarea {
     max-width: 280px;
 }
 
+.navbar-inverse {
+    background-color: #F37D23;
+    border: none;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffed;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-toggle {
+    border-color: #ffffed;
+}
+
+.navbar-inverse .navbar-brand {
+    font-family: 'Petit Formal Script', cursive;
+}
+
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-    background-color: #777;
+    background-color: #e35d13;
     border-color: #fff;
+}
+
+.expense-container {
+    background-color: white;
 }
 
 table {
@@ -52,4 +169,10 @@ td {
 #chart-container {
     display: flex;
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    #chart-container {
+        flex-flow: column nowrap;
+    }
 }

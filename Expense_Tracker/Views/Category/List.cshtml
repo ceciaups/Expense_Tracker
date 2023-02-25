@@ -4,12 +4,12 @@
 }
 
 <div class="navlink">
-    <a href="/Category/New">New Category</a>
 </div>
 
 <div>
     <h1>Category List</h1>
 </div>
+<a href="/Category/New" class="button button-general">New Category</a>
 <table id="table-category" class="display">
     <thead>
         <tr>
@@ -23,8 +23,8 @@
         {
             <tr>
                 <td>@category.CategoryName</td>
-                <td><a href="/Category/Edit/@category.CategoryID">Edit</td>
-                <td><a href="/Category/DeleteConfirm/@category.CategoryID">Delete</td>
+                <td><a href="/Category/Edit/@category.CategoryID" class="button button-edit">Edit</td>
+                <td><a href="/Category/DeleteConfirm/@category.CategoryID" class="button button-delete">Delete</td>
             </tr>
         }
     </tbody>

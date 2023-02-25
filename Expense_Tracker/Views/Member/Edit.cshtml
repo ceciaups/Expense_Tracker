@@ -3,10 +3,6 @@
     ViewBag.Title = "Edit Member";
 }
 
-<div class="navlink">
-    <a href="/Member/List">Back to Member</a>
-</div>
-
 <div>
     <h1>Update Member</h1>
 </div>
@@ -20,7 +16,7 @@
         <label>Name:</label> <input type="text" name="MemberName" value="@Model.MemberName" />
     </div>
     <div>
-        <input type="submit" value="Update Member" />
-
+        <input type="submit" value="Update Member" class="button button-general" />
+        <a href="/Member/List" class="button button-general">Cancel</a>
     </div>
 </form>

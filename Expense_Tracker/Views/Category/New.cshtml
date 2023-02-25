@@ -3,10 +3,6 @@
     ViewBag.Title = "New Category";
 }
 
-<div class="navlink">
-    <a href="/Category/List">Back to Category</a>
-</div>
-
 <div>
     <h1>New Category</h1>
 </div>
@@ -16,6 +12,7 @@
         <label>Name:</label> <input type="text" name="CategoryName" />
     </div>
     <div>
-        <input type="submit" value="Add Category" />
+        <input type="submit" value="Add Category" class="button button-general" />
+        <a href="/Category/List" class="button button-general">Cancel</a>
     </div>
 </form>

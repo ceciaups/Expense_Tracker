@@ -3,13 +3,10 @@
     ViewBag.Title = "Member";
 }
 
-<div class="navlink">
-    <a href="/Member/New">New Member</a>
-</div>
-
 <div>
     <h1>Member List</h1>
 </div>
+<a href="/Member/New" class="button button-general">New Member</a>
 <table id="table-member" class="display">
     <thead>
         <tr>
@@ -23,8 +20,8 @@
         {
             <tr>
                 <td>@member.MemberName</td>
-                <td><a href="/Member/Edit/@member.MemberID">Edit</td>
-                <td><a href="/Member/DeleteConfirm/@member.MemberID">Delete</td>
+                <td><a href="/Member/Edit/@member.MemberID" class="button button-edit">Edit</td>
+                <td><a href="/Member/DeleteConfirm/@member.MemberID" class="button button-delete">Delete</td>
             </tr>
         }
     </tbody>

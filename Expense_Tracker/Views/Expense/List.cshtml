@@ -3,41 +3,42 @@
     ViewBag.Title = "Expense Tracker";
 }
 
-<div class="navlink">
-    <a href="/Expense/New">New Expense</a>
-</div>
+<div class="expense-container">
 
-<div>
-    <h1>Expense Tracker</h1>
-</div>
+    <div>
+        <h1>Expense Tracker</h1>
+    </div>
+    
+    <a href="/Expense/New" class="button button-general button-new">New Expense</a>
 
-<table id="table-expense" class="display">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Member</th>
-            <th>Amount</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var expense in Model)
-        {
+    <table id="table-expense" class="display">
+        <thead>
             <tr>
-                <td>@expense.ExpenseDate</td>
-                <td>@expense.ExpenseDescription</td>
-                <td>@expense.CategoryName</td>
-                <td>@expense.MemberName</td>
-                <td>$@expense.ExpenseAmount</td>
-                <td><a href="/Expense/Edit/@expense.ExpenseID">Edit</td>
-                <td><a href="/Expense/DeleteConfirm/@expense.ExpenseID">Delete</td>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Member</th>
+                <th>Amount</th>
+                <th></th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var expense in Model)
+            {
+                <tr>
+                    <td>@expense.ExpenseDate</td>
+                    <td>@expense.ExpenseDescription</td>
+                    <td>@expense.CategoryName</td>
+                    <td>@expense.MemberName</td>
+                    <td>$@expense.ExpenseAmount</td>
+                    <td><a href="/Expense/Edit/@expense.ExpenseID" class="button button-edit">Edit</td>
+                    <td><a href="/Expense/DeleteConfirm/@expense.ExpenseID" class="button button-delete">Delete</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 <div id="chart-container">
     <div id="member-chart"></div>
